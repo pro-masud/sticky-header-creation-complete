@@ -1,0 +1,90 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #999;
+    height: 1000px;
+}
+.sticky-header{
+    position: fixed;
+    font-size: 24px;
+    line-height: 88px;
+    width: 100%;
+    text-align: left;
+    padding: 0 5%;
+    background-color: #fff;
+    border-radius: 0px 0px 10px 10px;
+    display: none;
+
+    animation-name: floating;
+    animation-duration: .8s;
+    animation-timing-function: ease-in;
+    animation-iteration-count:inherit;
+}
+@keyframes floating {
+    0%{
+        transform: translate(0, 20px);
+        
+    }
+    100%{
+        transform: translate(0, 0px);;
+    }
+}
+.sticky-container{
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a{
+    display: flex;
+}
+
+.shop-btn a{
+    font-family: Space Grotesk;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    color: #2F7893;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.shop-btn a::before{
+    content: url(./image/Vector.svg);
+    position: absolute;
+    top: 0px;
+    left: -25px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .sticky-header{
+        padding: 0px 10%;
+    }
+    .shop-btn a::before{
+        width: 16px;
+        height: 16px;
+        top: 4px;
+    }
+}
+@media screen and (max-width: 568px) {
+    .shop-btn a{
+        font-size: 12px;
+    }
+    .shop-btn a::before {
+        width: 16px;
+        height: 16px;
+        top: 4px;
+        left: -16px;
+        top: 2px;
+    }
+}
